@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Characters Counter (21-11-2023)</title>
+    <style>
+      form {
+        margin-left: auto;
+        margin-right: auto;
+        width: 370px;
+        margin-top: 80px;
+      }
+      textarea {
+        width: 100%;
+        border: 2px solid deeppink;
+        min-height: 82px;
+        border-radius: 4px;
+        outline: 0;
+        padding: 12px 15px;
+        font-family: cursive;
+        font-size: 17.2px;
+        resize: none;
+      }
+      h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
+        margin-top: 25px;
+        margin-bottom: -5px;
+        color: rgb(27, 173, 173);
+        font-size: 21px;
+      }
+      p {
+        font-size: 17px;
+        line-height: 1.5;
+        font-family: cursive;
+        color: rgb(34, 162, 212);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <textarea name="message" id="message" maxlength="100"></textarea>
+      <h3>Remaining Characters: <span id="remaining-letter"></span></h3>
+      <p id="output"></p>
+    </form>
+
+    <script type="text/javascript">
+      var remainingLetter = document.getElementById("remaining-letter");
+      var message = document.getElementById("message");
+      var output = document.getElementById("output");
+	  var limit = 100;
+      remainingLetter.innerHTML = limit - message.value.length;
+      message.addEventListener("keyup", function () {
+        remainingLetter.innerHTML = limit - message.value.length;
+        output.innerHTML = message.value;
+      });
+    </script>
+  </body>
+</html>
